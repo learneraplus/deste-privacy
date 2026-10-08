@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support · Destek · Deste</title>
+  <meta name="description" content="Support for the Deste iOS app by Learneraplus. Destek.">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Learneraplus</a>
+    <nav class="nav" aria-label="Main">
+      <a href="../index.html">Home</a>
+      <a href="index.html" aria-current="page">Deste</a>
+      <a href="privacy-policy.html">Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap doc">
+  <p class="crumbs"><a href="index.html">← Deste</a></p>
+
+  <div class="lang-switch" role="group" aria-label="Language">
+    <button type="button" data-l="en" aria-pressed="true">English</button>
+    <button type="button" data-l="tr" aria-pressed="false">Türkçe</button>
+  </div>
+
+  <div id="en" class="lang-block on">
+    <h1>Support</h1>
+    <p>For questions, suggestions or bug reports: <a href="mailto:learneraplus@gmail.com">learneraplus@gmail.com</a></p>
+
+    <h2>Restoring purchases</h2>
+    <p>Use “Restore Purchases” in the app. If your purchase still does not appear, make sure you are signed in with the same Apple ID you bought it with.</p>
+
+    <h2>Cancelling a subscription</h2>
+    <p>Subscriptions are managed in iPhone Settings › [your name] › Subscriptions.</p>
+  </div>
+
+  <hr>
+
+  <div id="tr" class="lang-block">
+    <h1>Destek</h1>
+    <p>Deste hakkında soru, öneri veya sorun bildirimi için: <a href="mailto:learneraplus@gmail.com">learneraplus@gmail.com</a></p>
+
+    <h2>Satın alımı geri yükleme</h2>
+    <p>Uygulamanın ayarlar veya satın alma ekranındaki “Satın Alımları Geri Yükle” seçeneğini kullanın. Satın alımınız yine görünmüyorsa, Apple Kimliğinizle aynı hesabı kullandığınızdan emin olun.</p>
+
+    <h2>Abonelik iptali</h2>
+    <p>Abonelikler iPhone’unuzdaki Ayarlar › [Adınız] › Abonelikler bölümünden yönetilir ve iptal edilir.</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Learneraplus</span>
+    <nav aria-label="Legal">
+      <a href="index.html">Deste</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+  var buttons = document.querySelectorAll('.lang-switch button');
+  function show(lang) {
+    ['en', 'tr'].forEach(function (k) {
+      document.getElementById(k).classList.toggle('on', k === lang);
+    });
+    buttons.forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.dataset.l === lang));
+    });
+    document.documentElement.lang = lang;
+    try { history.replaceState(null, '', '#' + lang); } catch (e) {}
+  }
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { show(b.dataset.l); });
+  });
+  var hash = location.hash.slice(1);
+  var lang = (hash === 'tr' || hash === 'en')
+    ? hash
+    : ((navigator.language || '').toLowerCase().indexOf('tr') === 0 ? 'tr' : 'en');
+  show(lang);
+})();
+</script>
+
+</body>
+</html>

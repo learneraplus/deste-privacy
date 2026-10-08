@@ -1,0 +1,233 @@
+:root {
+  color-scheme: light;
+  --ink: #1f1d24;
+  --muted: #5f5b68;
+  --accent: #b94d16;
+  --accent-ink: #ffffff;
+  --surface: #fff9f5;
+  --card: #ffffff;
+  --line: #0001;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --ink: #f2eef5;
+    --muted: #b9b3c2;
+    --accent: #ffb08a;
+    --accent-ink: #17151b;
+    --surface: #17151b;
+    --card: #211e27;
+    --line: #fff2;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #f2eef5;
+  --muted: #b9b3c2;
+  --accent: #ffb08a;
+  --accent-ink: #17151b;
+  --surface: #17151b;
+  --card: #211e27;
+  --line: #fff2;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font: 16px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--surface);
+}
+
+a { color: var(--accent); overflow-wrap: anywhere; }
+
+.wrap {
+  width: min(960px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+/* Header and navigation */
+.site-header {
+  border-bottom: 1px solid var(--line);
+}
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 0;
+  flex-wrap: wrap;
+}
+.brand {
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: -.02em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.nav {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 600;
+}
+.nav a[aria-current="page"],
+.nav a:hover { color: var(--accent); }
+
+/* Page sections */
+.hero {
+  padding: 64px 0 40px;
+}
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -.04em;
+  margin: 0 0 .5rem;
+}
+.hero p {
+  color: var(--muted);
+  font-size: 1.1rem;
+  max-width: 620px;
+  margin: 0;
+}
+
+section.block {
+  padding: 32px 0;
+}
+section.block h2 {
+  font-size: 1.4rem;
+  letter-spacing: -.02em;
+  margin: 0 0 1rem;
+}
+
+.cards {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 22px;
+}
+.card h3 {
+  margin: 0 0 .4rem;
+  font-size: 1.1rem;
+}
+.card p {
+  margin: 0;
+  color: var(--muted);
+}
+.card a.more {
+  display: inline-block;
+  margin-top: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Deste app page */
+.app-head {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 48px 0 24px;
+  flex-wrap: wrap;
+}
+.app-icon {
+  width: 84px;
+  height: 84px;
+  border-radius: 20px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 2rem;
+}
+.app-head h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+  letter-spacing: -.04em;
+}
+.app-head p {
+  margin: .2rem 0 0;
+  color: var(--muted);
+}
+
+.doc {
+  padding: 24px 0 72px;
+}
+.doc h1 {
+  font-size: 2.2rem;
+  letter-spacing: -.04em;
+  margin: .3rem 0 .2rem;
+}
+.doc h2 {
+  font-size: 1.15rem;
+  margin: 1.8rem 0 .3rem;
+}
+.doc p, .doc li {
+  color: var(--muted);
+}
+.doc hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 2.4rem 0;
+}
+.crumbs {
+  font-size: .95rem;
+}
+.crumbs a {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Language switch used on bilingual pages */
+.lang-switch {
+  display: flex;
+  gap: 8px;
+  margin: 1.2rem 0 0;
+}
+.lang-switch button {
+  font: inherit;
+  font-weight: 700;
+  padding: .35rem .9rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+}
+.lang-switch button[aria-pressed="true"] {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+}
+.js .lang-block { display: none; }
+.js .lang-block.on { display: block; }
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 24px 0 40px;
+  color: var(--muted);
+  font-size: .95rem;
+}
+.site-footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.site-footer a {
+  color: var(--muted);
+}

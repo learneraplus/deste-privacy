@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy · Gizlilik Politikası · Deste</title>
+  <meta name="description" content="Privacy Policy for the Deste iOS app by Learneraplus. Gizlilik Politikası.">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Learneraplus</a>
+    <nav class="nav" aria-label="Main">
+      <a href="../index.html">Home</a>
+      <a href="index.html">Deste</a>
+      <a href="privacy-policy.html" aria-current="page">Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap doc">
+  <p class="crumbs"><a href="index.html">← Deste</a></p>
+
+  <div class="lang-switch" role="group" aria-label="Language">
+    <button type="button" data-l="en" aria-pressed="true">English</button>
+    <button type="button" data-l="tr" aria-pressed="false">Türkçe</button>
+  </div>
+
+  <div id="en" class="lang-block on">
+    <h1>Privacy Policy</h1>
+    <p>Last updated: 4 October 2026</p>
+    <p>This policy explains how the Deste iOS app (bundle ID: com.canti.Deste), published by Learneraplus, handles personal data. Questions: <a href="mailto:learneraplus@gmail.com">learneraplus@gmail.com</a></p>
+
+    <h2>What data is collected?</h2>
+    <p>Deste does not require an account. The app stores the words you learn, your study progress and your settings only on your device. This data is not sent to the developer or to any server.</p>
+
+    <h2>Purchases</h2>
+    <p>Subscriptions and one-time purchases are handled by Apple through StoreKit. The app checks with Apple whether a purchase is valid in order to unlock content. It does not receive your card or payment details. Apple processes payment data under its own policy: <a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a>.</p>
+
+    <h2>Analytics, advertising and tracking</h2>
+    <p>Deste does not use advertising, third-party analytics or tracking. Your study activity is not used to target ads and is not shared with third parties.</p>
+
+    <h2>Data retention and deletion</h2>
+    <p>Your study data stays on your device. Deleting the app removes it from the device. Apple manages your purchase record; use “Restore Purchases” in the app to regain access on a new device.</p>
+
+    <h2>Children</h2>
+    <p>Deste does not knowingly collect personal information from children.</p>
+
+    <h2>Changes</h2>
+    <p>If how we handle data changes, we will update this page and its date.</p>
+  </div>
+
+  <hr>
+
+  <div id="tr" class="lang-block">
+    <h1>Gizlilik Politikası</h1>
+    <p>Son güncelleme: 4 Ekim 2026</p>
+    <p>Bu politika, Learneraplus tarafından yayımlanan Deste iOS uygulamasının (paket kimliği: com.canti.Deste) kişisel verileri nasıl ele aldığını açıklar. Sorularınız için: <a href="mailto:learneraplus@gmail.com">learneraplus@gmail.com</a></p>
+
+    <h2>Hangi veriler toplanır?</h2>
+    <p>Deste hesap oluşturmanızı istemez. Uygulama, öğrendiğiniz kelimeleri, çalışma ilerlemenizi ve ayarlarınızı yalnızca cihazınızda saklar. Bu veriler geliştiriciye veya başka bir sunucuya gönderilmez.</p>
+
+    <h2>Satın almalar</h2>
+    <p>Abonelik ve tek seferlik satın alımlar Apple’ın StoreKit hizmeti üzerinden yürütülür. Uygulama, satın alımın geçerli olup olmadığını Apple’dan öğrenerek erişimi açar. Kart veya ödeme bilgilerinize uygulama erişmez. Ödeme verileri Apple tarafından kendi gizlilik koşullarına göre işlenir: <a href="https://www.apple.com/legal/privacy/">Apple Gizlilik Politikası</a>.</p>
+
+    <h2>Analiz, reklam ve izleme</h2>
+    <p>Deste; reklam, üçüncü taraf analiz veya izleme hizmeti kullanmaz. Öğrenme etkinliğiniz reklam hedeflemek için kullanılmaz ve üçüncü taraflarla paylaşılmaz.</p>
+
+    <h2>Veri saklama ve silme</h2>
+    <p>Çalışma verileriniz cihazınızda tutulur. Uygulamayı silmek bu verileri cihazınızdan kaldırır. Satın alım kaydınızı Apple yönetir; uygulamadaki “Satın Alımları Geri Yükle” seçeneğiyle yeniden erişebilirsiniz.</p>
+
+    <h2>Çocuklar</h2>
+    <p>Deste çocuklardan bilerek kişisel bilgi toplamaz.</p>
+
+    <h2>Değişiklikler</h2>
+    <p>Veri işleme biçimi değişirse bu sayfayı günceller ve tarihini yenileriz.</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Learneraplus</span>
+    <nav aria-label="Legal">
+      <a href="index.html">Deste</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+  var buttons = document.querySelectorAll('.lang-switch button');
+  function show(lang) {
+    ['en', 'tr'].forEach(function (k) {
+      document.getElementById(k).classList.toggle('on', k === lang);
+    });
+    buttons.forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.dataset.l === lang));
+    });
+    document.documentElement.lang = lang;
+    try { history.replaceState(null, '', '#' + lang); } catch (e) {}
+  }
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { show(b.dataset.l); });
+  });
+  var hash = location.hash.slice(1);
+  var lang = (hash === 'tr' || hash === 'en')
+    ? hash
+    : ((navigator.language || '').toLowerCase().indexOf('tr') === 0 ? 'tr' : 'en');
+  show(lang);
+})();
+</script>
+
+</body>
+</html>
